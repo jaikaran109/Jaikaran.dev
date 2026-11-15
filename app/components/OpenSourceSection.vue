@@ -1,26 +1,19 @@
 <script setup lang="ts">
-  import { useFetch } from 'nuxt/app';
-
-  const github = await useFetch('/api/github');
-
   const stats = [
     {
       label: 'GitHub Stars',
-      count: github.value?.pinned.reduce((sum, r) => sum + r.stars, 0) ?? 0,
+      count: 150,
       icon: 'lucide:star',
     },
     {
       label: 'Open Source Packages',
-      count: github.value?.repos.length ?? 0,
+      count: 1,
       icon: 'lucide:package',
     },
-    { label: 'npm Downloads', count: 0, icon: 'lucide:download' },
+    { label: 'npm Downloads', count: 487, icon: 'lucide:download' },
     {
       label: 'Contributions',
-      count:
-        github.value?.pinned.length > 0
-          ? (github.value.pinned[0]?.stars ?? 0)
-          : 0,
+      count: 2745,
       icon: 'lucide:git-commit-horizontal',
     },
   ];
@@ -101,7 +94,7 @@
         >
           Featured Projects
         </h3>
-        <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
           <a
             href="https://github.com/jaikaran109/51_Web_Projects"
             target="_blank"
@@ -116,6 +109,22 @@
             <h4 class="mt-2 text-sm font-medium">51_Web_Projects</h4>
             <p class="mt-1 text-xs text-muted-foreground">
               Collection of 51 web projects
+            </p>
+          </a>
+          <a
+            href="https://github.com/jaikaran109/NameStyle-NPM-Package"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group rounded-xl border border-border bg-card p-4 hover:border-primary/30 transition-all"
+          >
+            <div
+              class="h-32 flex items-center justify-center border-2 border-dashed border-border text-muted-foreground"
+            >
+              <div>NameStyle</div>
+            </div>
+            <h4 class="mt-2 text-sm font-medium">NameStyle-NPM-Package</h4>
+            <p class="mt-1 text-xs text-muted-foreground">
+              npm package for name styling
             </p>
           </a>
           <a
